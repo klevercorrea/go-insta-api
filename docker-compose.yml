@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:7.0.8-alpine
+    container_name: redis
+    restart: unless-stopped
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - TZ=${TZ}
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data:/data
+    command: redis-server --appendonly yes
