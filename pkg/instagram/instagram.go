@@ -120,7 +120,7 @@ func GetFollowers(ctx context.Context, insta *goinsta.Instagram, totalFollowers 
 				allFollowers = nil
 
 				// Sleep for a while
-				sleepDuration := utils.RandomTime(30, 100)
+				sleepDuration := utils.RandomTime(180, 240)
 				utils.Countdown(int(sleepDuration.Seconds()))
 			}
 			if followers.Error() == nil {
